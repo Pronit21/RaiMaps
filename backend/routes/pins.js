@@ -1,9 +1,7 @@
 const express = require("express");
-const router = express.Router(); // Create a router object
-
+const router = express.Router();
 const Pin = require("../models/Pin");
 
-// Create a pin
 router.post("/", async (req, res) => {
   const newPin = new Pin(req.body);
   try {
@@ -14,7 +12,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// Get all pins
 router.get("/", async (req, res) => {
   try {
     const pins = await Pin.find();
@@ -24,4 +21,5 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router; // Export the router object
+module.exports = router;
+
